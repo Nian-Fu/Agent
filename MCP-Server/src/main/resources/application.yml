@@ -1,0 +1,7 @@
+spring:
+  application:
+    name: MCP-Server
+  profiles:
+    active: stdio
+server:
+  port: 8127
