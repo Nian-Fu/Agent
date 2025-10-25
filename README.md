@@ -2,9 +2,9 @@
 
 ## 项目介绍 (Project Introduction)
 
-这是一个基于 ReAct 模式构建的 AI 智能体应用平台，集成了多种人工智能能力，包括文档检索增强生成（RAG）、多模型对话、多轮对话记忆及自主规划等功能。平台提供了用户友好的前端界面，支持 AI 恋爱大师和全能型 AI 超级智能体等服务。
+这是一个基于 ReAct 模式构建的 AI 智能体应用平台，集成了多种人工智能能力，包括文档检索增强生成（RAG）、多模型对话、多轮对话记忆及自主规划等功能。平台提供了用户友好的前端界面，支持 AI 旅游助手和全能型 AI 超级智能体等服务。
 
-This is an AI agent application platform built based on the ReAct pattern, integrating multiple AI capabilities including Retrieval-Augmented Generation (RAG), multi-model dialogue, multi-turn conversation memory, and autonomous planning. The platform provides a user-friendly frontend interface, supporting services such as AI Love Advisor and all-capable AI Super Agent.
+This is an AI agent application platform built based on the ReAct pattern, integrating multiple AI capabilities including Retrieval-Augmented Generation (RAG), multi-model dialogue, multi-turn conversation memory, and autonomous planning. The platform provides a user-friendly frontend interface, supporting services such as AI Travel Advisor and all-capable AI Super Agent.
 
 ## 功能特点 (Features)
 
