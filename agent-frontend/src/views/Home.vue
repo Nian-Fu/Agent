@@ -2,26 +2,26 @@
   <div class="home-container">
     <div class="header">
       <div class="glitch-wrapper">
-        <h1 class="glitch-title">鱼皮AI超级智能体</h1>
+        <h1 class="glitch-title">付念AI超级智能体</h1>
       </div>
       <p class="subtitle">/ 探索AI的无限可能 /</p>
       <div class="cyber-line"></div>
     </div>
-    
+
     <div class="apps-container">
       <div class="app-card" @click="navigateTo('/love-master')">
         <div class="card-glow"></div>
         <div class="app-icon love-icon">❤️</div>
         <div class="app-info">
-          <div class="app-title">AI恋爱大师</div>
-          <div class="app-desc">智能情感顾问，帮你解答恋爱烦恼</div>
+          <div class="app-title">AI旅游大师</div>
+          <div class="app-desc">智能顾问，帮你解答旅游烦恼</div>
         </div>
         <div class="app-button">
           <span class="btn-text">立即体验</span>
           <span class="btn-icon">→</span>
         </div>
       </div>
-      
+
       <div class="app-card" @click="navigateTo('/super-agent')">
         <div class="card-glow"></div>
         <div class="app-icon robot-icon">🤖</div>
@@ -35,13 +35,13 @@
         </div>
       </div>
     </div>
-    
+
     <div class="cyber-circles">
       <div class="circle circle-1"></div>
       <div class="circle circle-2"></div>
       <div class="circle circle-3"></div>
     </div>
-    
+
     <AppFooter />
   </div>
 </template>
@@ -53,15 +53,15 @@ import AppFooter from '../components/AppFooter.vue'
 
 // 设置页面标题和元数据
 useHead({
-  title: '鱼皮AI超级智能体应用平台 - 首页',
+  title: '付念AI超级智能体应用平台 - 首页',
   meta: [
     {
       name: 'description',
-      content: '鱼皮AI超级智能体应用平台提供AI恋爱大师和AI超级智能体服务，满足您的各种AI对话需求'
+      content: '付念AI超级智能体应用平台提供AI旅游大师和AI超级智能体服务，满足您的各种AI对话需求'
     },
     {
       name: 'keywords',
-      content: 'AI智能体,AI应用,AI恋爱大师,AI助手,智能对话,鱼皮,AI超级智能体,首页'
+      content: 'AI智能体,AI应用,AI旅游大师,AI助手,智能对话,付念,AI超级智能体,首页'
     }
   ]
 })
@@ -91,7 +91,7 @@ const navigateTo = (path) => {
   flex-direction: column;
   min-height: 100vh;
   background-color: var(--cyber-dark);
-  background-image: 
+  background-image:
     linear-gradient(0deg, rgba(8, 17, 34, 0.9), rgba(5, 8, 20, 0.9)),
     url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect x="0" y="0" width="100" height="1" fill="%23111133" opacity="0.3"/><rect x="0" y="0" width="1" height="100" fill="%23111133" opacity="0.3"/></svg>');
   background-size: auto, 40px 40px;
@@ -119,7 +119,7 @@ const navigateTo = (path) => {
   font-size: 3.2rem;
   font-weight: 700;
   color: var(--cyber-light);
-  text-shadow: 
+  text-shadow:
     0 0 5px rgba(0, 240, 255, 0.7),
     0 0 10px rgba(0, 240, 255, 0.5),
     0 0 20px rgba(0, 240, 255, 0.3);
@@ -209,7 +209,7 @@ const navigateTo = (path) => {
   background-color: rgba(17, 23, 41, 0.7);
   backdrop-filter: blur(10px);
   border-radius: 16px;
-  box-shadow: 
+  box-shadow:
     0 8px 32px rgba(0, 240, 255, 0.2),
     inset 0 0 0 1px rgba(255, 255, 255, 0.1);
   padding: 30px;
@@ -240,7 +240,7 @@ const navigateTo = (path) => {
 
 .app-card:hover {
   transform: translateY(-15px) scale(1.03);
-  box-shadow: 
+  box-shadow:
     0 15px 50px rgba(0, 240, 255, 0.3),
     inset 0 0 0 1px rgba(0, 240, 255, 0.5);
 }
@@ -398,18 +398,18 @@ const navigateTo = (path) => {
 
 @keyframes glitch {
   0% {
-    text-shadow: 
+    text-shadow:
       0 0 5px rgba(0, 240, 255, 0.7),
       0 0 10px rgba(0, 240, 255, 0.5);
   }
   50% {
-    text-shadow: 
+    text-shadow:
       0 0 5px rgba(0, 240, 255, 0.7),
       0 0 10px rgba(0, 240, 255, 0.5),
       0 0 20px rgba(0, 240, 255, 0.3);
   }
   100% {
-    text-shadow: 
+    text-shadow:
       0 0 5px rgba(0, 240, 255, 0.7),
       0 0 10px rgba(0, 240, 255, 0.5);
   }
@@ -456,22 +456,22 @@ const navigateTo = (path) => {
   .glitch-title {
     font-size: 2.5rem;
   }
-  
+
   .subtitle {
     font-size: 1rem;
   }
-  
+
   .apps-container {
     gap: 30px;
     margin: 40px auto;
   }
-  
+
   .app-card {
     width: 100%;
     max-width: 420px;
     padding: 25px;
   }
-  
+
   .app-icon {
     font-size: 3.5rem;
     width: 80px;
@@ -483,42 +483,42 @@ const navigateTo = (path) => {
   .header {
     padding: 50px 15px 40px;
   }
-  
+
   .glitch-title {
     font-size: 2rem;
   }
-  
+
   .subtitle {
     font-size: 0.9rem;
     letter-spacing: 2px;
   }
-  
+
   .apps-container {
     margin: 30px auto;
     padding: 0 15px;
   }
-  
+
   .app-card {
     padding: 20px;
   }
-  
+
   .app-icon {
     font-size: 3rem;
     margin-bottom: 20px;
     width: 70px;
     height: 70px;
   }
-  
+
   .app-title {
     font-size: 1.4rem;
   }
-  
+
   .app-desc {
     font-size: 0.9rem;
   }
-  
+
   .circle-1, .circle-2, .circle-3 {
     opacity: 0.1;
   }
 }
-</style> 
+</style>

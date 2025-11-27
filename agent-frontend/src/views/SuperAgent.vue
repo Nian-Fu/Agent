@@ -5,18 +5,18 @@
       <h1 class="title">AI超级智能体</h1>
       <div class="placeholder"></div>
     </div>
-    
+
     <div class="content-wrapper">
       <div class="chat-area">
-        <ChatRoom 
-          :messages="messages" 
+        <ChatRoom
+          :messages="messages"
           :connection-status="connectionStatus"
           ai-type="super"
           @send-message="sendMessage"
         />
       </div>
     </div>
-    
+
     <div class="footer-container">
       <AppFooter />
     </div>
@@ -33,15 +33,15 @@ import { chatWithManus } from '../api'
 
 // 设置页面标题和元数据
 useHead({
-  title: 'AI超级智能体 - 鱼皮AI超级智能体应用平台',
+  title: 'AI超级智能体 - 付念AI超级智能体应用平台',
   meta: [
     {
       name: 'description',
-      content: 'AI超级智能体是鱼皮AI超级智能体应用平台的全能助手，能解答各类专业问题，提供精准建议和解决方案'
+      content: 'AI超级智能体是付念AI超级智能体应用平台的全能助手，能解答各类专业问题，提供精准建议和解决方案'
     },
     {
       name: 'keywords',
-      content: 'AI超级智能体,智能助手,专业问答,AI问答,专业建议,鱼皮,AI智能体'
+      content: 'AI超级智能体,智能助手,专业问答,AI问答,专业建议,付念,AI智能体'
     }
   ]
 })
@@ -64,31 +64,31 @@ const addMessage = (content, isUser, type = '') => {
 // 发送消息
 const sendMessage = (message) => {
   addMessage(message, true, 'user-question')
-  
+
   // 连接SSE
   if (eventSource) {
     eventSource.close()
   }
-  
+
   // 设置连接状态
   connectionStatus.value = 'connecting'
-  
+
   // 临时存储
   let messageBuffer = []; // 用于存储SSE消息的缓冲区
   let lastBubbleTime = Date.now(); // 上一个气泡的创建时间
   let isFirstResponse = true; // 是否是第一次响应
-  
+
   const chineseEndPunctuation = ['。', '！', '？', '…']; // 中文句子结束标点
   const minBubbleInterval = 800; // 气泡最小间隔时间(毫秒)
-  
+
   // 创建消息气泡的函数
   const createBubble = (content, type = 'ai-answer') => {
     if (!content.trim()) return;
-    
+
     // 添加适当的延迟，使消息显示更自然
     const now = Date.now();
     const timeSinceLastBubble = now - lastBubbleTime;
-    
+
     if (isFirstResponse) {
       // 第一条消息立即显示
       addMessage(content, false, type);
@@ -102,52 +102,52 @@ const sendMessage = (message) => {
       // 正常添加消息
       addMessage(content, false, type);
     }
-    
+
     lastBubbleTime = now;
     messageBuffer = []; // 清空缓冲区
   };
-  
+
   eventSource = chatWithManus(message)
-  
+
   // 监听SSE消息
   eventSource.onmessage = (event) => {
     const data = event.data
-    
+
     if (data && data !== '[DONE]') {
       messageBuffer.push(data);
-      
+
       // 检查是否应该创建新气泡
       const combinedText = messageBuffer.join('');
-      
+
       // 句子结束或消息长度达到阈值
       const lastChar = data.charAt(data.length - 1);
       const hasCompleteSentence = chineseEndPunctuation.includes(lastChar) || data.includes('\n\n');
       const isLongEnough = combinedText.length > 40;
-      
+
       if (hasCompleteSentence || isLongEnough) {
         createBubble(combinedText);
       }
     }
-    
+
     if (data === '[DONE]') {
       // 如果还有未显示的内容，创建最后一个气泡
       if (messageBuffer.length > 0) {
         const remainingContent = messageBuffer.join('');
         createBubble(remainingContent, 'ai-final');
       }
-      
+
       // 完成后关闭连接
       connectionStatus.value = 'disconnected'
       eventSource.close()
     }
   }
-  
+
   // 监听SSE错误
   eventSource.onerror = (error) => {
     console.error('SSE Error:', error)
     connectionStatus.value = 'error'
     eventSource.close()
-    
+
     // 如果出错时有未显示的内容，也创建气泡
     if (messageBuffer.length > 0) {
       const remainingContent = messageBuffer.join('');
@@ -252,11 +252,11 @@ onBeforeUnmount(() => {
   .header {
     padding: 12px 16px;
   }
-  
+
   .title {
     font-size: 18px;
   }
-  
+
   .chat-area {
     padding: 12px;
     min-height: calc(100vh - 48px - 160px); /* 调整计算值 */
@@ -268,19 +268,19 @@ onBeforeUnmount(() => {
   .header {
     padding: 10px 12px;
   }
-  
+
   .back-button {
     font-size: 14px;
   }
-  
+
   .title {
     font-size: 16px;
   }
-  
+
   .chat-area {
     padding: 8px;
     min-height: calc(100vh - 42px - 150px); /* 再次调整计算值 */
     margin-bottom: 8px;
   }
 }
-</style> 
+</style>

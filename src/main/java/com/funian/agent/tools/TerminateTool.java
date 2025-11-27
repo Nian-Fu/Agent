@@ -1,6 +1,12 @@
-package com.yupi.yuaiagent.tools;
+package com.funian.agent.tools;
 
 import org.springframework.ai.tool.annotation.Tool;
+
+/**
+ * @Auther FuNian
+ * @Major Computer Software
+ */
+
 
 /**
  * 终止工具（作用是让自主规划智能体能够合理地中断）

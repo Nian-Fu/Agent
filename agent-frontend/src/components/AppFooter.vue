@@ -3,34 +3,33 @@
     <div class="footer-content">
       <div class="footer-section">
         <div class="footer-logo">
-          <h3>鱼皮AI超级智能体应用平台</h3>
+          <h3>付念AI超级智能体开发资料</h3>
         </div>
         <div class="footer-links">
-          <a href="#">《用户协议》</a>
-          <a href="#">《隐私政策》</a>
+          <a href="https://rdsnext.console.aliyun.com/detail/rm-cn-6gt4byjj5000ex/basicInfo?region=cn-hangzhou">《阿里云RDS》</a>
+          <a href="https://help.aliyun.com/zh/model-studio/what-is-model-studio?spm=a2c4g.11174283.0.i1">《阿里云MCP》</a>
         </div>
       </div>
-      
+
       <div class="footer-section">
         <h4>友情链接</h4>
         <div class="footer-links">
-          <a href="https://www.mianshiya.com" target="_blank">面试鸭</a>
-          <a href="#" target="_blank">编程导航</a>
-          <a href="#" target="_blank">代码小抄</a>
+          <a href="https://cloud.weixin.qq.com/cloudrun/service" target="_blank">微信云托管</a>
+          <a href="https://docs.spring.io/spring-ai/reference/api/chat/comparison.html" target="_blank">Spring AI</a>
         </div>
       </div>
-      
+
       <div class="footer-section">
         <h4>联系我们</h4>
         <div class="footer-links">
-          <a href="#">商务合作</a>
-          <a href="#">站长：鱼皮</a>
+          <a href="https://blog.csdn.net/weixin_44262492?type=blog">技术博客</a>
+          <a href="https://blog.csdn.net/weixin_44262492?type=blog">站长：付念</a>
         </div>
       </div>
     </div>
-    
+
     <div class="footer-bottom">
-      <p>© {{ currentYear }} 鱼皮AI超级智能体应用平台 - 让AI为你服务</p>
+      <p>© {{ currentYear }} 付念AI超级智能体应用平台 - 让AI为你服务</p>
     </div>
   </footer>
 </template>
@@ -137,7 +136,7 @@ const currentYear = computed(() => new Date().getFullYear())
   .footer-content {
     flex-direction: column;
   }
-  
+
   .footer-section {
     width: 100%;
     margin-bottom: 20px;
@@ -149,18 +148,18 @@ const currentYear = computed(() => new Date().getFullYear())
   .app-footer {
     padding: 30px 0 15px;
   }
-  
+
   .footer-section h4 {
     font-size: 0.95rem;
   }
-  
+
   .footer-links a {
     font-size: 0.9rem;
   }
-  
+
   .qrcode-placeholder {
     width: 80px;
     height: 80px;
   }
 }
-</style> 
+</style>

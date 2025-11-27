@@ -1,4 +1,4 @@
-package com.yupi.yuaiagent.tools;
+package com.funian.agent.tools;
 
 import org.springframework.ai.tool.ToolCallback;
 import org.springframework.ai.tool.ToolCallbacks;
@@ -7,12 +7,17 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 /**
+ * @Auther FuNian
+ * @Major Computer Software
+ */
+
+/**
  * 集中的工具注册类
  */
 @Configuration
 public class ToolRegistration {
 
-    @Value("${search-api.api-key}")
+    @Value("${search-api.api-key:oJQtz4cpK4QgbfjyGV7Vsw6g}")
     private String searchApiKey;
 
     @Bean

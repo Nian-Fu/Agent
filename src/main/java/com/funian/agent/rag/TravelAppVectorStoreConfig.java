@@ -12,33 +12,36 @@ import java.util.List;
 
 /**
  * @Auther FuNian
- * @Date 2025/7/2 19:29
- * @ClassName:TravelAppVectorStoreConfig
- * @School SiChuan University
  * @Major Computer Software
+ * 基于内存的向量数据库，调用embedding模型 ,自动的模型注入
  */
 @Configuration
-public class LoveAppVectorStoreConfig {
+public class TravelAppVectorStoreConfig {
 
     @Resource
-    private LoveAppDocumentLoader loveAppDocumentLoader;
+    private TravelAppDocumentLoader travelAppDocumentLoader;
 
-    @Resource
-    private MyTokenTextSplitter myTokenTextSplitter;
+//    @Resource
+//    private PgVectorVectorStoreConfig pgVectorVectorStoreConfig;
 
     @Resource
     private MyKeywordEnricher myKeywordEnricher;
+    private EmbeddingModel dashscopeEmbeddingModel;
+    @Resource
+    private MyTokenTextSplitter myTokenTextSplitter;
 
     @Bean
-    VectorStore loveAppVectorStore(EmbeddingModel dashscopeEmbeddingModel) {
+    VectorStore travelAppVectorStore(EmbeddingModel dashscopeEmbeddingModel) {
+        this.dashscopeEmbeddingModel = dashscopeEmbeddingModel;
         SimpleVectorStore simpleVectorStore = SimpleVectorStore.builder(dashscopeEmbeddingModel).build();
         // 加载文档
-        List<Document> documentList = loveAppDocumentLoader.loadMarkdowns();
+        List<Document> documentList = travelAppDocumentLoader.loadMarkdowns();
         // 自主切分文档
-//        List<Document> splitDocuments = myTokenTextSplitter.splitCustomized(documentList);
-        // 自动补充关键词元信息
+       List<Document> splitDocuments = myTokenTextSplitter.splitCustomized(documentList);
+        // 自动补充关键词元信息、增强器
         List<Document> enrichedDocuments = myKeywordEnricher.enrichDocuments(documentList);
-        simpleVectorStore.add(enrichedDocuments);
+        simpleVectorStore.add(documentList);
+//        pgVectorVectorStoreConfig.pgVectorVectorStore(documentList);
         return simpleVectorStore;
     }
 }

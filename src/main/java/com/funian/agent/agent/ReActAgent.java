@@ -1,8 +1,13 @@
-package com.yupi.yuaiagent.agent;
+package com.funian.agent.agent;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.extern.slf4j.Slf4j;
+
+/**
+ * @Auther FuNian
+ * @Major Computer Software
+ */
 
 /**
  * ReAct (Reasoning and Acting) 模式的代理抽象类

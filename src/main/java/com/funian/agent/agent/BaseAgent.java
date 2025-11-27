@@ -1,7 +1,8 @@
-package com.yupi.yuaiagent.agent;
+package com.funian.agent.agent;
 
 import cn.hutool.core.util.StrUtil;
-import com.yupi.yuaiagent.agent.model.AgentState;
+
+import com.funian.agent.agent.model.AgentState;
 import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.ai.chat.client.ChatClient;

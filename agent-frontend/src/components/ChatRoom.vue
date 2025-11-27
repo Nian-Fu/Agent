@@ -4,8 +4,8 @@
     <div class="chat-messages" ref="messagesContainer">
       <div v-for="(msg, index) in messages" :key="index" class="message-wrapper">
         <!-- AI消息 -->
-        <div v-if="!msg.isUser" 
-             class="message ai-message" 
+        <div v-if="!msg.isUser"
+             class="message ai-message"
              :class="[msg.type]">
           <div class="avatar ai-avatar">
             <AiAvatarFallback :type="aiType" />
@@ -18,7 +18,7 @@
             <div class="message-time">{{ formatTime(msg.time) }}</div>
           </div>
         </div>
-        
+
         <!-- 用户消息 -->
         <div v-else class="message user-message" :class="[msg.type]">
           <div class="message-bubble">
@@ -35,15 +35,15 @@
     <!-- 输入区域 -->
     <div class="chat-input-container">
       <div class="chat-input">
-        <textarea 
-          v-model="inputMessage" 
+        <textarea
+          v-model="inputMessage"
           @keydown.enter.prevent="sendMessage"
-          placeholder="请输入消息..." 
+          placeholder="请输入消息..."
           class="input-box"
           :disabled="connectionStatus === 'connecting'"
         ></textarea>
-        <button 
-          @click="sendMessage" 
+        <button
+          @click="sendMessage"
           class="send-button"
           :disabled="connectionStatus === 'connecting' || !inputMessage.trim()"
         >发送</button>
@@ -78,15 +78,15 @@ const messagesContainer = ref(null)
 
 // 根据AI类型选择不同头像
 const aiAvatar = computed(() => {
-  return props.aiType === 'love' 
-    ? '/ai-love-avatar.png'  // 恋爱大师头像
+  return props.aiType === 'love'
+    ? '/ai-love-avatar.png'  // 旅游大师头像
     : '/ai-super-avatar.png' // 超级智能体头像
 })
 
 // 发送消息
 const sendMessage = () => {
   if (!inputMessage.value.trim()) return
-  
+
   emit('send-message', inputMessage.value)
   inputMessage.value = ''
 }
@@ -318,19 +318,19 @@ onMounted(() => {
   .message {
     max-width: 95%;
   }
-  
+
   .message-content {
     font-size: 15px;
   }
-  
+
   .chat-input {
     padding: 12px;
   }
-  
+
   .input-box {
     padding: 8px 12px;
   }
-  
+
   .send-button {
     padding: 0 15px;
     font-size: 14px;
@@ -342,19 +342,19 @@ onMounted(() => {
     width: 32px;
     height: 32px;
   }
-  
+
   .message-bubble {
     padding: 10px;
   }
-  
+
   .message-content {
     font-size: 14px;
   }
-  
+
   .chat-input-container {
     height: 64px;
   }
-  
+
   .chat-messages {
     bottom: 64px;
   }
@@ -389,4 +389,4 @@ onMounted(() => {
 .ai-message + .ai-message .message-bubble {
   border-top-left-radius: 10px;
 }
-</style> 
+</style>

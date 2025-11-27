@@ -5,6 +5,10 @@ import org.springframework.ai.chat.client.ChatClient;
 import org.springframework.ai.chat.model.ChatModel;
 import org.springframework.ai.tool.ToolCallback;
 import org.springframework.stereotype.Component;
+/**
+ * @Auther FuNian
+ * @Major Computer Software
+ */
 
 /**
  * 付念的 AI 超级智能体（拥有自主规划能力，可以直接使用）
@@ -27,7 +31,7 @@ public class FuManus extends ToolCallAgent {
                 If you want to stop the interaction at any point, use the `terminate` tool/function call.
                 """;
         this.setNextStepPrompt(NEXT_STEP_PROMPT);
-        this.setMaxSteps(20);
+        this.setMaxSteps(10);
         // 初始化 AI 对话客户端
         ChatClient chatClient = ChatClient.builder(dashscopeChatModel)
                 .defaultAdvisors(new MyLoggerAdvisor())

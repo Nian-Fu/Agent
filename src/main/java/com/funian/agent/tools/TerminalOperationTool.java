@@ -1,4 +1,4 @@
-package com.yupi.yuaiagent.tools;
+package com.funian.agent.tools;
 
 import org.springframework.ai.tool.annotation.Tool;
 import org.springframework.ai.tool.annotation.ToolParam;
@@ -6,6 +6,12 @@ import org.springframework.ai.tool.annotation.ToolParam;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+
+/**
+ * @Auther FuNian
+ * @Major Computer Software
+ */
+
 
 /**
  * 终端操作工具

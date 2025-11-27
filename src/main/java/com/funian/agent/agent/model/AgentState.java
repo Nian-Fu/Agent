@@ -1,4 +1,4 @@
-package com.yupi.yuaiagent.agent.model;
+package com.funian.agent.agent.model;
 
 /**
  * 代理执行状态的枚举类

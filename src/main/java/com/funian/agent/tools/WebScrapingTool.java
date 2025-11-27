@@ -2,9 +2,6 @@ package com.funian.agent.tools;
 
 /**
  * @Auther FuNian
- * @Date 2025/7/3 19:52
- * @ClassName:WebScrapingTool
- * @School SiChuan University
  * @Major Computer Software
  */
 
